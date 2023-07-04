@@ -1,11 +1,11 @@
-FullStack PhoneBook Project
+# FullStack PhoneBook Project
 
 Projede express.js ile mongoose kullanılarak hazırlanmış bir apideki routerlardan axios ile GET,POST,PUT ve DELETE işlemlerini kullanarak id ,name ve phone bilgilerini içeren Contact lardan oluşan bir PhoneBook tablosu bulunmaktadır.
 
 
-Kullanılan teknolojiler
+## Kullanılan teknolojiler
 
-backend:
+### backend:
 
 01. express.js (api tasarımı için)
     ```
@@ -22,7 +22,7 @@ backend:
 04. nodemon(node.js deki değişiklerin anında sonuca yansımasını sağlar)
 
 
-frontend:
+### frontend:
 
 01. react
         ```
@@ -49,6 +49,6 @@ frontend:
       npm i axios
          ```
 
-database:
+### database:
     mongoDB
 
