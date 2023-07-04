@@ -12,13 +12,13 @@ Projede express.js ile mongoose kullanılarak hazırlanmış bir apideki routerl
         npm i express-generator
     ```
 02. cors (aynı bilgisayardaki farklı kaynaklar arsında veri alışverişine izin verir)
-        ```
+    ```
         npm i cors
-        ```
+    ```
 03. mongoose (mongoDB konnektörü)
-        ```
+    ```
         npm i mongoose
-        ```
+    ```
 04. nodemon(node.js deki değişiklerin anında sonuca yansımasını sağlar)
 
 
