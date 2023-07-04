@@ -25,29 +25,29 @@ Projede express.js ile mongoose kullanılarak hazırlanmış bir apideki routerl
 ### frontend:
 
 01. react
-        ```
+    ```
         npx create-react-app myapp
-        ```
+    ```
 02. --template redux (state yönetimi ve dosya yapısı hazır bir redux template i eklemek için)
-         ```
+    ```
         npx --template redux
-         ```
-03. bootstarp (css için)
-         ```
+    ```
+03. bootstrap (css için)
+    ```
        npm i bootstrap
-         ```
+    ```
 04. react-toastify (bildirimleri göstermek için)
-         ```
+    ```
       npm i react-toastify
-         ```
+    ```
 05. react-router-dom (yönlendirmeler için )
-         ```
+    ```
       npm i react-router-dom
-         ```
+    ```
 06. axios (apiden veriyi çekip kullanmak için)
-         ```
+    ```
       npm i axios
-         ```
+    ```
 
 ### database:
     mongoDB
