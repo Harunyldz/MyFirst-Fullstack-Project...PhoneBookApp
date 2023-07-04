@@ -56,10 +56,10 @@ function Edit() {
             <h2 className='mb-5 text-center text-white display-5'>Update Contact</h2>
             <form onSubmit={handleUpdate}>
                 <div className="form-group">
-                    <input type="text" className="form-control form-control-lg mb-1" placeholder='Name ...' value={updatedName} onChange={e => setUpdatedName(e.target.value)} />
+                    <input type="text" className="form-control form-control-lg mb-1"  value={updatedName} onChange={e => setUpdatedName(e.target.value)} />
                 </div>
                 <div className="form-group">
-                    <input type="text" className="form-control form-control-lg mb-3" placeholder='Phone...' value={updatedPhone} onChange={e => setUpdatedPhone(e.target.value)} />
+                    <input type="tel" pattern="[0-9]{4} [0-9]{3} [0-9]{4}"  className="form-control form-control-lg mb-3" value={updatedPhone} onChange={e => setUpdatedPhone(e.target.value)} />
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-lg text-uppercase mb-3">Update</button>
