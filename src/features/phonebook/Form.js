@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify';
 
-
-
 function Form() {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')

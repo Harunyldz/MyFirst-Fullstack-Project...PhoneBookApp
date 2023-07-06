@@ -18,8 +18,8 @@ function List() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/contact/${id}`) 
-            toast.error(`${contacts.find(contact=>contact._id===id).name} deleted`, { theme: 'colored' });
+            await axios.delete(`http://localhost:5000/contact/${id}`)
+            toast.error(`${contacts.find(contact => contact._id === id).name} deleted`, { theme: 'colored' });
             dispatch(fetchData())
             navigate('/');
         }
@@ -27,7 +27,6 @@ function List() {
             console.error('Kişi silinirken bir hata oluştu', error)
         }
     };
-
 
     return (
         <div className="container w-100 vh-25">
