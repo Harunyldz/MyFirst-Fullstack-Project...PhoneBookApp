@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, fetchData } from './listSlice';
+import { fetchData } from './listSlice';
 import axios from 'axios'
+import { toast } from 'react-toastify';
+
 
 function List() {
     const contacts = useSelector((state) => state.contacts.data); // store daki veriye erişim sağladı
@@ -17,7 +19,8 @@ function List() {
     const handleDelete = async (id) => {
         try {
             await axios.delete(`http://localhost:5000/contact/${id}`) 
-            dispatch(deleteContact({ id }));
+            toast.error(`${contacts.find(contact=>contact._id===id).name} deleted`, { theme: 'colored' });
+            dispatch(fetchData())
             navigate('/');
         }
         catch (error) {

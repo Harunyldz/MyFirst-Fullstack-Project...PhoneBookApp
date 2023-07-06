@@ -1,34 +1,36 @@
 import React, { useState } from 'react'
-import { addContact } from './listSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { toast } from 'react-toastify';
+
 
 
 function Form() {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
 
-    const contacts=useSelector((state)=>state.contacts.data)
-    const dispatch = useDispatch()
+    const contacts = useSelector((state) => state.contacts.data)
     const navigate = useNavigate()
 
-    const handleContact =async (event) => {
-     event.preventDefault();
-     const newContact={
-        id:contacts.length>0? contacts[contacts.length-1].id+1:1,
-        name:name.toLocaleUpperCase(),
-        phone,
-     };
+    const handleContact = async (event) => {
+        event.preventDefault();
+        const newContact = {
+            id: contacts.length > 0 ? contacts[contacts.length - 1].id + 1 : 1,
+            name: name.toLocaleUpperCase(),
+            phone,
+        };
 
-     try{
-        await axios.post('http://localhost:5000/contact', newContact);
-        dispatch(addContact(newContact));
-        navigate('/');
-     }
-     catch(error){
-        console.error('Kişi eklenirken bir hata oluştu',error)
-     }
+        try {
+            await axios.post('http://localhost:5000/contact', newContact);
+            toast.success(`${name.toLocaleUpperCase()} added`, {
+                theme: 'colored',
+            })
+            navigate('/');
+        }
+        catch (error) {
+            console.error('Kişi eklenirken bir hata oluştu', error)
+        }
     }
     return (
         <div className='w-50 p-3'>
@@ -40,7 +42,7 @@ function Form() {
                 <div className="form-group">
                     <input type="tel" pattern="[0-9]{4} [0-9]{3} [0-9]{4}" className="form-control form-control-lg mb-3" placeholder='Phone...1234 567 8900' onChange={e => setPhone(e.target.value)} />
                 </div>
-              
+
                 <button type="submit" className="btn btn-primary btn-lg text-uppercase mb-3">Add</button>
 
             </form>

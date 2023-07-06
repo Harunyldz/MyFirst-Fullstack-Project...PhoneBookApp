@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { updateContact } from './listSlice'
 import axios from 'axios'
+import { toast } from 'react-toastify';
 
 
 function Edit() {
@@ -13,7 +14,6 @@ function Edit() {
     const [updatedName, setUpdatedName] = useState('');
     const [updatedPhone, setUpdatedPhone] = useState('');
 
-    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -38,7 +38,10 @@ function Edit() {
                 name: updatedName.toLocaleUpperCase(),
                 phone: updatedPhone,
             });
-            dispatch(updateContact({ name: updatedName, phone: updatedPhone, _id: id }));
+            // dispatch(updateContact({ name: updatedName, phone: updatedPhone, _id: id}));
+            toast.info(`${updatedName.toLocaleUpperCase()} updated `, {
+                theme: 'colored',
+              });
             navigate('/');
         } catch (error) {
             console.error('Kişi güncellenirken bir hata oluştu!', error);
