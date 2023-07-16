@@ -2,7 +2,7 @@
 
 Projede express.js ile mongoose kullanılarak hazırlanmış bir apideki routerlardan axios ile GET,POST,PUT ve DELETE işlemlerini kullanarak id ,name ve phone bilgilerini içeren Contact lardan oluşan bir PhoneBook tablosu bulunmaktadır.
 
-Projeyi çalıştırmadan önce .env deki url adresini güncelleyin
+Projeyi çalıştırmadan önce .env deki url adresinin password alanına kendi bilginizi girin
 
 ## Kullanılan teknolojiler
 
